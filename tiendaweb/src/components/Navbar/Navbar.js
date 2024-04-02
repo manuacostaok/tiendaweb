@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-modal';
 import './Navbar.css'; // Estilos CSS para el Navbar
+import Cart from '../Cart/Cart'; // Importa el componente Cart
 
 // Establece la posición del modal en el centro de la pantalla
 Modal.setAppElement('#root');
@@ -9,6 +10,7 @@ const Navbar = () => {
   const [showCategories, setShowCategories] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
+  const [showCartSidebar, setShowCartSidebar] = useState(false); // Nuevo estado para mostrar la sidebar del carrito
 
   const toggleCategories = () => {
     setShowCategories(!showCategories);
@@ -30,17 +32,39 @@ const Navbar = () => {
     setShowRegisterModal(false);
   };
 
+  // Función para agregar un producto al carrito
+  const addProductToCart = (product) => {
+    // Aquí puedes agregar la lógica para agregar el producto al carrito
+    console.log('Producto agregado al carrito:', product);
+  };
+
+  // Función para mostrar/ocultar la sidebar del carrito
+  const toggleCartSidebar = () => {
+    setShowCartSidebar(!showCartSidebar);
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
         <div className="logo">Mi Tienda</div>
         <div className="nav-links">
-          <button onClick={toggleCategories}>Categorías</button>
-          <button onClick={openLoginModal}>Login</button>
-          <button onClick={openRegisterModal}>Registro</button>
-          <button>Home</button>
-          <button>Contacto</button>
-          <button>Sucursales</button>
+          <button>
+            <i className="fas fa-home"></i> Home {/* Botón para ir a la página de inicio */}
+          </button>
+          <button onClick={toggleCategories}>
+            <i className="fas fa-list"></i> Categorías
+          </button>
+          <button onClick={openLoginModal}>
+            <i className="fas fa-sign-in-alt"></i> Login
+          </button>
+          <button onClick={openRegisterModal}>
+            <i className="fas fa-user-plus"></i> Registro
+          </button>
+          <button onClick={toggleCartSidebar}> {/* Mostrar/ocultar la sidebar del carrito al hacer clic en el botón */}
+            <i className="fas fa-shopping-cart"></i> Carrito
+          </button>
+          {/* Agrega el componente Cart y pasa la función addProductToCart como prop */}
+          <Cart addProductToCart={addProductToCart} show={showCartSidebar} /> {/* Pasar el estado de showCartSidebar al componente Cart */}
         </div>
         {showCategories && (
           <div className="categories-menu">

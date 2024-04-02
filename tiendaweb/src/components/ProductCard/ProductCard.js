@@ -1,14 +1,19 @@
 import React from 'react';
 
 const ProductCard = ({ product }) => {
+  // Verifica si el producto está definido antes de desestructurar sus propiedades
+  if (!product) {
+    return <div>No se ha proporcionado ningún producto</div>;
+  }
+
+  const { name, price, imageUrl } = product;
+
   return (
     <div className="product-card">
-      <img src={product.imageUrl} alt={product.name} />
-      <div className="product-details">
-        <h3>{product.name}</h3>
-        <p>{product.description}</p>
-        <p>${product.price}</p>
-      </div>
+      <img src={imageUrl} alt={name} />
+      <h3>{name}</h3>
+      <p>Precio: ${price}</p>
+      {/* Agrega aquí cualquier otra lógica o elementos que desees renderizar */}
     </div>
   );
 };

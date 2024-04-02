@@ -1,99 +1,107 @@
 .navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .nav-links {
-    display: flex;
-  }
-  
-  .nav-links button {
-    background: none;
-    border: none;
-    color: white;
-    margin-right: 10px;
-    cursor: pointer;
-  }
-  
+  background-color: #333;
+  color: white;
+  padding: 10px 0;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center; /* Alinea los íconos verticalmente */
+}
+
+.nav-links button {
+  background: none;
+  border: none;
+  color: white;
+  margin-right: 10px;
+  cursor: pointer;
+  display: flex; /* Para que los íconos y el texto estén en la misma línea */
+  align-items: center; /* Alinea los íconos verticalmente */
+}
+
+.nav-links button i {
+  margin-right: 5px; /* Espacio entre el ícono y el texto */
+}
+
 .categories-menu {
-    position: absolute;
-    top: calc(100% + 10px); /* Posiciona el menú debajo del botón "Categorías" */
-    left: 0;
-    background-color: #333; /* Cambia el color de fondo para que coincida con la navbar */
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: ${showCategories ? 'block' : 'none'};
-    width: 200px;
-    z-index: 1000;
+  position: absolute;
+  top: calc(100% + 10px); /* Posiciona el menú debajo del botón "Categorías" */
+  left: 0;
+  background-color: #333; /* Cambia el color de fondo para que coincida con la navbar */
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: ${showCategories ? 'block' : 'none'};
+  width: 200px;
+  z-index: 1000;
 }
 
 .categories-menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .categories-menu ul li {
-    cursor: pointer;
-    color: white; /* Cambia el color del texto para que coincida con el de la navbar */
+  cursor: pointer;
+  color: white; /* Cambia el color del texto para que coincida con el de la navbar */
 }
-  
-  .search-bar {
-    display: flex;
-  }
-  
-  .search-bar input {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 3px 0 0 3px;
-  }
-  
-  .search-bar button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 0 3px 3px 0;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
-  /* Estilos para el modal */
-  .ReactModal__Overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-  }
-  
-  .ReactModal__Content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 400px;
-    width: 80%;
-  }
-  
-  .ReactModal__Content h2 {
-    margin-top: 0;
-  }
-  
-  .ReactModal__Content button {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
+
+.search-bar {
+  display: flex;
+  align-items: center; /* Alinea el input y el botón verticalmente */
+}
+
+.search-bar input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px 0 0 3px;
+}
+
+.search-bar button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* Estilos para el modal */
+.ReactModal__Overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.ReactModal__Content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 400px;
+  width: 80%;
+}
+
+.ReactModal__Content h2 {
+  margin-top: 0;
+}
+
+.ReactModal__Content button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
