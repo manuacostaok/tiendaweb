@@ -63,8 +63,8 @@ const Navbar = () => {
           <button onClick={toggleCartSidebar}> {/* Mostrar/ocultar la sidebar del carrito al hacer clic en el botón */}
             <i className="fas fa-shopping-cart"></i> Carrito
           </button>
-          {/* Agrega el componente Cart y pasa la función addProductToCart como prop */}
-          <Cart addProductToCart={addProductToCart} show={showCartSidebar} /> {/* Pasar el estado de showCartSidebar al componente Cart */}
+          {/* Mostrar la sección del carrito solo si showCartSidebar es true */}
+          {showCartSidebar && <Cart addProductToCart={addProductToCart} />} 
         </div>
         {showCategories && (
           <div className="categories-menu">
